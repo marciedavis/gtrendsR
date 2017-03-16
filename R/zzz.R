@@ -65,7 +65,7 @@ get_widget <- function(comparison_item, category, gprop) {
   url <- URLencode(paste0("https://www.google.com/trends/api/explore?property=&req=", 
                           jsonlite::toJSON(token_payload, auto_unbox = TRUE), 
                           "&tz=300&hl=en-US")) ## Need better than this
-  
+  print(url)
   widget <- curl::curl_fetch_memory(url)
   
   stopifnot(widget$status_code == 200)
